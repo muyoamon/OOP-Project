@@ -15,14 +15,16 @@ that my professor provided to complete my workshops and assignments.
 #include "Menu.h"
 #include <cstdio>
 #include <cstring>
-#include <ostream>
+#include <ios>
+#include <iostream>
 #include <cctype>
+#include <limits>
 namespace seneca {
   
   Menu::Menu(const char *menuContent, int numberOfTabs) {
     int i=0; 
     m_text = new char[strlen(menuContent) + 1];
-    std::strncpy( (char *) m_text, menuContent, strlen(menuContent));
+    std::strcpy( (char *) m_text, menuContent);
     m_indentation = numberOfTabs;
     m_optionNum = 0;
     while (menuContent[i] != '\0') {
@@ -37,14 +39,16 @@ namespace seneca {
   }
 
   std::ostream& Menu::display(std::ostream& ostr) {
-    char *line = std::strtok( (char *) m_text, "\n");
-    int i=0;
-    this->indent() << "Tester Options menu:\n";
-    for (i=0; i<m_optionNum;i++) {
-      this->indent() << line[i] << std::endl;
+    char* lines = new char[std::strlen(m_text) + 1];
+    std::strcpy(lines,m_text);
+    char * line = std::strtok(lines, "\n");
+    while (line != NULL) {
+      this->indent() << line << std::endl;
+      line = std::strtok(NULL, "\n\0");
     }
     this->indent() << "0- Exit\n";
     this->indent() << "> ";
+    delete[] lines;
     return ostr;
   }
   
@@ -54,16 +58,19 @@ namespace seneca {
     this->display();
     do {
       valid = 1;
-      if (!isdigit(std::cin.peek())) {
+      std::cin.setstate(std::ios_base::goodbit);
+      std::cin >> option;
+      if (std::cin.fail()) {
         valid = 0;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Bad integer value, try again: ";
       } else {
-        std::cin >> option;
-        if (std::cin.peek() != EOF) {
+        if (std::cin.peek() != '\n') {
           std::cout << "Only enter an integer, try again: ";
           valid = 0;
-        } else if (option > m_optionNum) {
-          std::cout << "Invalid value enterd, retry[0 <= value <=" << m_optionNum <<"]: ";
+        } else if (option > m_optionNum || option < 0) {
+          std::cout << "Invalid value enterd, retry[0 <= value <= " << m_optionNum << "]: ";
           valid = 0;
         }
       }
