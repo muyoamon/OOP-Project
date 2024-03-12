@@ -57,8 +57,8 @@ namespace seneca {
         this->m_minutes + 1440u - T.m_minutes :
         this->m_minutes - T.m_minutes);
   }
-  std::ostream& Time::operator<<(std::ostream& ostr) {
-    return write(ostr);
+  std::ostream& operator<<(std::ostream& ostr, Time& T) {
+    return T.write(ostr);
   }
   std::istream& operator>>(std::istream& istr, Time& T) {
     return T.read(istr);
