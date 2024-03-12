@@ -81,7 +81,7 @@ namespace seneca {
 
   std::ostream& Menu::indent(std::ostream& ostr) {
     for (int i=0;i<m_indentation;i++) {
-      ostr << " ";
+      ostr << "   ";
     }
     return ostr;
   }
