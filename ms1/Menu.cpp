@@ -37,13 +37,11 @@ namespace seneca {
   }
 
   std::ostream& Menu::display(std::ostream& ostr) {
-    char* line;
+    char *line = std::strtok( (char *) m_text, "\n");
     int i=0;
     this->indent() << "Tester Options menu:\n";
-    while (m_text[i] != '\0') {
-      line = std::strtok( (char *) m_text, "\n");
-      this->indent() << line << std::endl;
-      i++;
+    for (i=0; i<m_optionNum;i++) {
+      this->indent() << line[i] << std::endl;
     }
     this->indent() << "0- Exit\n";
     this->indent() << "> ";
