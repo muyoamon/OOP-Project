@@ -13,10 +13,11 @@ I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
 ----------------------------------------------------------- */
 #include "Time.h"
+#include "Utils.h"
 namespace seneca {
   
   Time& Time::reset() {
-    m_minutes = 0u;
+    m_minutes = U.getTime();
     return *this;
   }
   Time::Time(unsigned int min) {
