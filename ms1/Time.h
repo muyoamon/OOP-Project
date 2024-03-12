@@ -31,7 +31,7 @@ public:
   Time operator- (const Time& T) const;
 
 };
-  std::ostream& operator<<(std::ostream& ostr, Time& T);
+  std::ostream& operator<<(std::ostream& ostr, Time T);
   std::istream& operator>>(std::istream& istr, Time& T);
 } // namespace seneca
 

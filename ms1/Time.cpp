@@ -23,7 +23,12 @@ namespace seneca {
     m_minutes = min;
   }
   std::ostream& Time::write(std::ostream& ostr) {
-    return ostr << m_minutes/60 << ":" << m_minutes%60;
+    ostr.width(2);
+    ostr.fill('0');
+    ostr << m_minutes/60 << ":";
+    ostr.width(2);
+    ostr << m_minutes%60;
+    return ostr;
   }
   std::istream& Time::read(std::istream& istr) {
     uint hour, minute;
@@ -53,11 +58,10 @@ namespace seneca {
     return *this;
   }
   Time Time::operator- (const Time& T) const {
-    return Time(this->m_minutes < T.m_minutes ? 
-        this->m_minutes + 1440u - T.m_minutes :
-        this->m_minutes - T.m_minutes);
+    Time result = *this;
+    return Time(result -= T);
   }
-  std::ostream& operator<<(std::ostream& ostr, Time& T) {
+  std::ostream& operator<<(std::ostream& ostr, Time T) {
     return T.write(ostr);
   }
   std::istream& operator>>(std::istream& istr, Time& T) {
