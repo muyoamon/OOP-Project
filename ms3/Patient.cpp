@@ -14,6 +14,11 @@ namespace seneca {
     m_ohipNum = 0;
     strncpy(m_name, other.m_name, strlen(other.m_name) + 1);
   }
+  Patient::Patient(Patient&& other) : m_ticket(other.m_ticket) {
+    m_name = other.m_name;
+    other.m_name = nullptr;
+    m_ohipNum = other.m_ohipNum;
+  }
   Patient& Patient::operator=(Patient& rhs) {
     m_ticket = rhs.m_ticket;
     m_ohipNum = rhs.m_ohipNum;

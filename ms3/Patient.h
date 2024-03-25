@@ -11,6 +11,7 @@ Ticket m_ticket;
   public:
 Patient(int ticketNum);
 Patient(Patient& other);
+Patient(Patient&& other);
 Patient& operator=(Patient& rhs);
 virtual ~Patient();
 virtual char type() const=0;
