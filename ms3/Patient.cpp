@@ -10,9 +10,9 @@ namespace seneca {
   }
   Patient::Patient(Patient& other):m_ticket(other.m_ticket) {
 
-    m_name = new char[strlen(other.m_name) + 1];
+    m_name = new char[strlen(other.m_name) + 1]{'\0'};
     m_ohipNum = 0;
-    strncpy(m_name, other.m_name, strlen(other.m_name) + 1);
+    strncpy(m_name, other.m_name, strlen(other.m_name));
   }
   Patient::Patient(Patient&& other) : m_ticket(other.m_ticket) {
     m_name = other.m_name;
@@ -23,8 +23,8 @@ namespace seneca {
     m_ticket = rhs.m_ticket;
     m_ohipNum = rhs.m_ohipNum;
     delete[] m_name;
-    m_name = new char[strlen(rhs.m_name) + 1];
-    strncpy(m_name, rhs.m_name, strlen(rhs.m_name) + 1);
+    m_name = new char[strlen(rhs.m_name) + 1]{'\0'};
+    strncpy(m_name, rhs.m_name, strlen(rhs.m_name));
     return *this;
   }
   Patient::~Patient() {
@@ -108,7 +108,7 @@ namespace seneca {
           std::cout << "Bad integer value, try again: ";
           valid = 0;
         } else if (m_ohipNum < 100000000 || m_ohipNum > 999999999) {
-          std::cout << "Invalid value entered, retry (100000000 <= value <= 999999999): ";
+          std::cout << "Invalid value enterd, retry[100000000 <= value <= 999999999]: ";
           valid = 0;
       }
     } while (!valid);
