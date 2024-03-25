@@ -10,9 +10,10 @@ namespace seneca {
   }
   Patient::Patient(Patient& other):m_ticket(other.m_ticket) {
 
-    m_name = new char[strlen(other.m_name) + 1]{'\0'};
+    m_name = new char[strlen(other.m_name) + 1];
     m_ohipNum = 0;
     strncpy(m_name, other.m_name, strlen(other.m_name));
+    m_name[strlen(other.m_name)] = '\0';
   }
   Patient::Patient(Patient&& other) : m_ticket(other.m_ticket) {
     m_name = other.m_name;
@@ -23,8 +24,9 @@ namespace seneca {
     m_ticket = rhs.m_ticket;
     m_ohipNum = rhs.m_ohipNum;
     delete[] m_name;
-    m_name = new char[strlen(rhs.m_name) + 1]{'\0'};
+    m_name = new char[strlen(rhs.m_name) + 1];
     strncpy(m_name, rhs.m_name, strlen(rhs.m_name));
+    m_name[strlen(rhs.m_name)] = '\0';
     return *this;
   }
   Patient::~Patient() {
