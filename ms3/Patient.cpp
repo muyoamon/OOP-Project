@@ -11,7 +11,7 @@ namespace seneca {
   Patient::Patient(Patient& other):m_ticket(other.m_ticket) {
 
     m_name = new char[strlen(other.m_name) + 1];
-    m_ohipNum = 0;
+    m_ohipNum = other.m_ohipNum;
     strncpy(m_name, other.m_name, strlen(other.m_name));
     m_name[strlen(other.m_name)] = '\0';
   }
@@ -77,7 +77,7 @@ namespace seneca {
         m_ticket.write(ostr);
         ostr << std::endl;
         ostr << m_name;
-        ostr << ", OHIP:" << m_ohipNum << std::endl;
+        ostr << ", OHIP: " << m_ohipNum << std::endl;
       }
     } else {
       ostr << this->type() << ',';
