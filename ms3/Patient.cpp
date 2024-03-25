@@ -100,6 +100,7 @@ namespace seneca {
       delete[] m_name;
       m_name = new char[strlen(buffer) + 1];
       strncpy(m_name, buffer, strlen(buffer));
+      m_name[strlen(buffer)] = '\0';
       std::cout << "OHIP: ";
       do {
         valid = true;
@@ -121,6 +122,7 @@ namespace seneca {
       delete[] m_name;
       m_name = new char[strlen(buffer) + 1];
       strncpy(m_name, buffer, strlen(buffer));
+      m_name[strlen(buffer)] = '\0';
       istr.ignore(std::numeric_limits<std::streamsize>::max(), ',');
       istr.clear();
       istr >> m_ohipNum >> temp;
