@@ -13,7 +13,7 @@
 #include <fstream>
 #include "Patient.h"
 #include "TestPatient.h"
-#include "utils.h"
+#include "Utils.h"
 using namespace std;
 using namespace seneca;
 int main() {
