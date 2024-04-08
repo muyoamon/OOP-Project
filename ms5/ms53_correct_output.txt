@@ -49,7 +49,7 @@ Saving lineup...
 5 Contagion Tests and 9 Triage records were saved!
 
 ******  Content of file: "smalldata.csv":
-01:27,00:35
+00:36,00:35
 T,Barney Gumble,350158143,12,08:05,Nausea-Vomiting-Abdominal Pain
 T,Murphy Brown,763006002,13,08:07,Pounding headache
 C,Dewey Largo,712691397,20,08:10

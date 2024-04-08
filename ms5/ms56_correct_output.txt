@@ -41,7 +41,7 @@ TRIAGE
 Ticket No: 20, Issued at: 08:41
 John Doe, OHIP: 123123123
 Symptoms: Stomach pain
-Estimated Wait Time: 04:40
+Estimated Wait Time: 05:15
 ******************************************
 
 General Healthcare Facility Pre-Triage Application
@@ -65,7 +65,7 @@ TRIAGE
 Ticket No: 21, Issued at: 08:44
 Jane Doe, OHIP: 234234234
 Symptoms: Abdomen pain
-Estimated Wait Time: 05:15
+Estimated Wait Time: 05:50
 ******************************************
 
 General Healthcare Facility Pre-Triage Application

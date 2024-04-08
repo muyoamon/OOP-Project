@@ -19,8 +19,8 @@ OHIP: 123123123
 ******************************************
 Contagion TEST
 Ticket No: 26, Issued at: 08:41
-Jone Doe, OHIP: 123123123
-Estimated Wait Time: 04:48
+John Doe, OHIP: 123123123
+Estimated Wait Time: 04:12
 ******************************************
 
 General Healthcare Facility Pre-Triage Application
@@ -42,7 +42,7 @@ OHIP: 234234234
 Contagion TEST
 Ticket No: 27, Issued at: 08:44
 Jane Doe, OHIP: 234234234
-Estimated Wait Time: 05:24
+Estimated Wait Time: 04:48
 ******************************************
 
 General Healthcare Facility Pre-Triage Application
@@ -72,6 +72,6 @@ C,Lenny Leonard,587869296,23,08:30
 T,Lou,152561791,24,08:32,Abdominal Pain
 C,Martin Prince,666834410,25,08:33
 T,Marvin Monroe,617902450,19,08:40,Fever-Sore throat-Red blisters on tonge hand and feet
-C,Jone Doe,123123123,26,08:41
+C,John Doe,123123123,26,08:41
 C,Jane Doe,234234234,27,08:44
 ***************************************************

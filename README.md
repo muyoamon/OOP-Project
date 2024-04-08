@@ -2,7 +2,7 @@
 ## Current Project State
 - MS1 & MS2 release <br /> V1.2 Clarified the insertion and extraction operator overloads
 - MS3 & MS4 release<br />V1.1 MS4 (removed deprecated methods, `csvRead and csvWrite`)
-- MS5 release(V0.9 review)
+- MS5 release(V1.0)<br />Times corrected in ouput samples
 
 ## Milestones
 
@@ -12,7 +12,7 @@
 | [MS2](#milestone-2) | V1.0 |    |
 | [MS3](#milestone-3) | V1.0  |    |
 | [MS4](#milestone-4) | V1.0  |   |
-| [MS5](#milestone-5) | V1.0 |   |
+| [MS5](#milestone-5) | V1.0 |  Times corrected in ouput samples |
 
 
 ## Use case

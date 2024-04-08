@@ -50,7 +50,7 @@ T,Murphy Brown,763006002,13,08:07,Pounding headache
 C,Chief Clancy Wiggum,448762564,19,08:09
 C,Dewey Largo,712691397,20,08:10
 C,Eddie,547723561,21,08:13
-T,Edna Krabappel,435676529,14,08:17,Muscle tension-Nausea-Photosensitivity 
+T,Edna Krabappel,435676529,14,08:17,Muscle tension-Nausea-Photosensitivity
 T,Itchy,253789913,15,08:20,Chest Pain-Lightheadedness-Pain radiates to arm
 T,Janey Powell,319153275,16,08:22,Fatigue-Dry mouth-Stomach pain
 C,Jasper Beardly,119258893,22,08:23
