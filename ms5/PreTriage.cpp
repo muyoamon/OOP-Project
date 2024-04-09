@@ -154,11 +154,11 @@ namespace seneca {
       default:
         break;
     }
-    std::cout << "Please enter patient information: ";
+    std::cout << "Please enter patient information: \n";
     std::cin >> *m_lineup[m_patientNum];
     std::cout << "\n";
     std::cout <<"******************************************\n";
-    std::cout << m_lineup[m_patientNum];
+    std::cout << *m_lineup[m_patientNum];
     std::cout << "Estimated Wait Time: ";
     std::cout << getWaitTime(*m_lineup[m_patientNum]);
     std::cout << "\n" 
@@ -191,7 +191,7 @@ namespace seneca {
       std::cout << "\n";
       std::cout << "******************************************\n";
       std::cout << "Call time: [";
-      std::cout << ((type == 'T') ? Time(m_lineup[index]->time() + m_triAvgTime) : Time(m_lineup[index]->time() + m_testAvgTime));
+      std::cout << U.getTime();
       std::cout << "]\n";
       std::cout << "Calling for ";
       std::cout << *m_lineup[index];
