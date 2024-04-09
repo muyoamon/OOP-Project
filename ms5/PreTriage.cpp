@@ -191,7 +191,7 @@ namespace seneca {
       std::cout << "\n";
       std::cout << "******************************************\n";
       std::cout << "Call time: [";
-      std::cout << U.getTime();
+      std::cout << Time(U.getTime());
       std::cout << "]\n";
       std::cout << "Calling for ";
       std::cout << *m_lineup[index];
