@@ -1,0 +1,28 @@
+/* Citation and Sources...
+Final Project Milestone 5
+Module: Reflection
+Filename: Reflect.txt
+Version 1.0
+Author   Thanatorn Wongthanaporn
+Revision History
+-----------------------------------------------------------
+Date      Reason
+2023/4/8  Preliminary release
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code 
+that my professor provided to complete my workshops and assignments.
+----------------------------------------------------------- */
+
+
+In this project, I have to say I learnt alot. Especially, coming from
+IPC144 project this project is like a whole new world. In this term, 
+project and workshops included, I have learnt new object-oriented terms
+and principles. such as, polymorphism, class, constructor, and so on.
+Everything needs to be encapsulated, somethings that is teach in IPC 
+is not used because of security issue. C++ is more memory safe. there 
+are alot of way to use operator. 
+
+The most challenging thing in this project is formatting output. I 
+think it is the most tedious and annoying thing when there is missing
+character, space, or a new line character. Everything else is 
+challenging enough for a project. not too hard and not too easy.
