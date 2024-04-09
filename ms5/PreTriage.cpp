@@ -40,14 +40,28 @@ namespace seneca {
   }
   
   Time PreTriage::getWaitTime(const Patient& patient) const {
+    int tcount = 0, ccount = 0;
+    Time result = 0u;
+    for (int i=0; i<m_patientNum; i++) {
+      if (m_lineup[i]->type() == 'C') {
+        ccount++;
+      } else {
+        tcount++;
+      }
+    }
     switch (patient.type()) {
       case 'C':
-        return m_testAvgTime;
+        result = m_testAvgTime;
+        result *= ccount;
+        break;
       case 'T':
-        return m_triAvgTime;
+        result = m_triAvgTime;
+        result *= tcount;
+        break;
       default:
-        return Time(0u);
+        break;
     }
+    return result;
   }
 
   void PreTriage::setAverageWaitTime(const Patient& patient) {
