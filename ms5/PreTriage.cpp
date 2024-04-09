@@ -191,7 +191,7 @@ namespace seneca {
       std::cout << "\n";
       std::cout << "******************************************\n";
       std::cout << "Call time: [";
-      std::cout << ((type == 'T') ? m_triAvgTime : m_testAvgTime);
+      std::cout << ((type == 'T') ? Time(*m_lineup[index] + m_triAvgTime) : Time(*m_lineup[index] + m_testAvgTime));
       std::cout << "]\n";
       std::cout << "Calling for ";
       std::cout << *m_lineup[index];
