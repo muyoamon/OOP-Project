@@ -145,9 +145,11 @@ namespace seneca {
     switch (selection) {
       case 1:
         m_lineup[m_patientNum] = new TestPatient();
+        m_lineup[m_patientNum]->setArrivalTime();
         break;
       case 2:
         m_lineup[m_patientNum] = new TriagePatient();
+        m_lineup[m_patientNum]->setArrivalTime();
         break;
       case 0:
         return;
@@ -193,7 +195,7 @@ namespace seneca {
       std::cout << "Call time: [";
       std::cout << Time(U.getTime());
       std::cout << "]\n";
-      std::cout << "Calling for ";
+      std::cout << "Calling at for ";
       std::cout << *m_lineup[index];
       std::cout << "******************************************\n\n";
       setAverageWaitTime(*m_lineup[index]);
