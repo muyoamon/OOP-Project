@@ -99,7 +99,7 @@ namespace seneca {
       }
     }
     if (m_patientNum != 0) {
-      std::cout << m_patientNum << " Records imported...\n";
+      std::cout << m_patientNum << " Records imported...\n\n";
     } else {
       std::cout << "No data or bad data file!\n\n";
     }
