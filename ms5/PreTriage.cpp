@@ -200,9 +200,10 @@ namespace seneca {
   }
 
   void PreTriage::lineup() const {
-    Menu options("Select Type Lineup:\nContagion Test\nTriage",1);
+    Menu options("Select Type Lineup:\n1- Contagion Test\n2- Triage",1);
     int selection;
     char type;
+    int num = 0;
     options >> selection;
     switch (selection) {
       case 1:
@@ -216,28 +217,46 @@ namespace seneca {
       default:
         break;
     }
-    std::cout << type;
-    // unfinished
+    std::clog << "Row - Patient name                                          OHIP     Tk #  Time\n-------------------------------------------------------------------------------\n" ;
+    if (m_patientNum ==0) {
+      std::clog << "Line up is empty!\n";
+    }
+    for (int i=0;i<m_patientNum;i++) {
+      if (m_lineup[i]->type() == type) {
+        std::clog.width(3);
+        std::clog.fill(' ');
+        std::clog.setf(std::ios_base::left);
+        std::clog << num+1;
+        std::clog.unsetf(std::ios_base::left);
+        std::clog << " - ";
+        std::clog << *m_lineup[i] << '\n';
+        num++;
+      }
+    }
+    std::clog << "-------------------------------------------------------------------------------\n";
   }
 
   void PreTriage::run() {
+
     Menu options("General Healthcare Facility Pre-Triage Application\n1- Register\n2- Admit\n3- View Lineup",0);
     int selection;
-    options >> selection;
-    switch (selection) {
-      case 1:
-        regist();
-        break;
-      case 2:
-        admit();
-        break;
-      case 3:
-        lineup();
-        break;
-      case 0:
-        return;
-      default:
-        break;
-    }
+    do {
+      options >> selection;
+      switch (selection) {
+        case 1:
+          regist();
+          break;
+        case 2:
+          admit();
+          break;
+        case 3:
+          lineup();
+          break;
+        case 0:
+          return;
+        default:
+          break;
+      } 
+    } while (selection != 0);
   }
 }
