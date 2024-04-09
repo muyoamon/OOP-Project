@@ -51,12 +51,12 @@ namespace seneca {
   }
 
   void PreTriage::setAverageWaitTime(const Patient& patient) {
-    
+    Time currentTime = Time(U.getTime());
     switch (patient.type()) {
       case 'C':
-        m_testAvgTime = ((Time().reset() - patient.time()) + (m_testAvgTime*(patient.number()-1))) / patient.number();
+        m_testAvgTime = ((currentTime - patient.time()) + (m_testAvgTime*(patient.number()-1))) / patient.number();
       case 'T':
-        m_triAvgTime = ((Time().reset() - patient.time()) + (m_triAvgTime*(patient.number()-1))) / patient.number();
+        m_triAvgTime = ((currentTime - patient.time()) + (m_triAvgTime*(patient.number()-1))) / patient.number();
       default:
         break;
     }
