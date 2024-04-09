@@ -135,7 +135,7 @@ namespace seneca {
   }
 
   void PreTriage::regist() {
-    Menu options("Select Type of Registration:\nContagion Test\nTriage",1);
+    Menu options("Select Type of Registration:\n1- Contagion Test\n2- Triage",1);
     int selection;
     if (m_patientNum >= 100) {
       std::cout << "Line up full!\n";
@@ -167,7 +167,7 @@ namespace seneca {
   }
 
   void PreTriage::admit() {
-    Menu options("Select Type of Admittance:\nContagion Test\nTriage",1);
+    Menu options("Select Type of Admittance:\n1- Contagion Test\n2- Triage",1);
     int selection;
     char type;
     options >> selection;
@@ -200,7 +200,7 @@ namespace seneca {
   }
 
   void PreTriage::lineup() const {
-    Menu options("Select Type Lineup:\n1- Contagion Test\n2- Triage",1);
+    Menu options("Select The Lineup:\n1- Contagion Test\n2- Triage",1);
     int selection;
     char type;
     int num = 0;
